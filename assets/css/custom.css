@@ -1,0 +1,81 @@
+  :root{
+    --primary:#2563EB; --secondary:#3B82F6; --accent:#EA580C;
+  }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+  }
+  body{ background:#F8FAFC; }
+
+  .skip-link{
+    position:absolute; left:1rem; top:-4rem; z-index:100;
+    background:#0B1220; color:#fff; padding:.75rem 1.25rem; border-radius:.5rem;
+    transition:top .2s ease;
+  }
+  .skip-link:focus{ top:1rem; }
+
+  :focus-visible{ outline:2px solid #2563EB; outline-offset:2px; border-radius:4px; }
+
+  .bg-grid{
+    background-image:
+      linear-gradient(rgba(37,99,235,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(37,99,235,0.06) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  }
+
+  .blob{
+    position:absolute; border-radius:9999px; filter:blur(70px); opacity:.55;
+    animation: float 14s ease-in-out infinite;
+    will-change: transform;
+  }
+  .blob-2{ animation-duration: 18s; animation-direction: reverse; }
+  @keyframes float{
+    0%,100%{ transform: translate(0,0) scale(1); }
+    50%{ transform: translate(24px,-30px) scale(1.08); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .blob{ animation:none; }
+  }
+
+  .glass{
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid rgba(255,255,255,0.6);
+  }
+  .glass-dark{
+    background: rgba(11,18,32,0.55);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .btn{ transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease; }
+  .btn:hover{ transform: translateY(-2px); }
+  .btn:active{ transform: translateY(0); }
+
+  .card-hover{ transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .card-hover:hover{ transform: translateY(-4px); box-shadow: 0 20px 40px -20px rgba(15,23,42,0.25); }
+
+  /* [data-reveal] elements start fully visible in CSS. When JS + motion are
+     available, script.js flips them to opacity:0 via GSAP's `.from()` at
+     tween-creation time (imperceptibly fast) and animates them in on load/
+     scroll. This keeps content visible with no-JS and with prefers-reduced-motion. */
+
+  .nav-link{ position:relative; }
+  .nav-link::after{
+    content:''; position:absolute; left:0; right:0; bottom:-4px; height:2px;
+    background: var(--primary); transform: scaleX(0); transform-origin:left;
+    transition: transform .25s ease;
+  }
+  .nav-link:hover::after, .nav-link:focus-visible::after{ transform: scaleX(1); }
+
+  .marquee-track{ animation: marquee 26s linear infinite; }
+  @media (prefers-reduced-motion: reduce){ .marquee-track{ animation:none; } }
+  @keyframes marquee{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+
+  ::selection{ background:#2563EB; color:#fff; }
