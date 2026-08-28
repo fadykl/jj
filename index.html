@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nexora — Websites &amp; CRM Systems Built to Grow Your Business</title>
+<meta name="description" content="Nexora designs fast, conversion-ready websites and custom CRM systems, so you can run leads, clients and growth from one place." />
+<meta name="theme-color" content="#F8FAFC" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital@0;1&display=swap" rel="stylesheet" />
+
+<!-- Tailwind is pre-compiled to assets/css/tailwind.css (see assets/README.md) — no runtime CDN dependency. -->
+<link rel="stylesheet" href="assets/css/tailwind.css" />
+<link rel="stylesheet" href="assets/css/custom.css" />
+</head>
+<body class="bg-bg text-fg font-sans antialiased">
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<header id="site-nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8">
+    <div id="nav-inner" class="mt-3 flex items-center justify-between rounded-2xl glass shadow-soft px-4 sm:px-6 py-3 transition-all duration-300">
+      <a href="#main" class="flex items-center gap-2 font-extrabold text-lg tracking-tight text-ink">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary text-white shadow-glow" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z"/></svg>
+        </span>
+        Nexora
+      </a>
+
+      <nav aria-label="Primary" class="hidden md:flex items-center gap-8 text-sm font-medium text-mutedfg">
+        <a href="#services" class="nav-link hover:text-ink">Services</a>
+        <a href="#crm" class="nav-link hover:text-ink">CRM Platform</a>
+        <a href="#work" class="nav-link hover:text-ink">Work</a>
+        <a href="#process" class="nav-link hover:text-ink">Process</a>
+        <a href="#pricing" class="nav-link hover:text-ink">Pricing</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="#contact" class="hidden sm:inline-flex btn items-center gap-1.5 rounded-xl bg-accent text-onaccent px-4 py-2.5 text-sm font-semibold shadow-soft hover:shadow-glow">
+          Start a project
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl text-ink hover:bg-muted">
+          <svg id="icon-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg id="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="hidden"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-menu" aria-label="Mobile" class="hidden md:hidden mt-2 rounded-2xl glass shadow-soft p-4 flex flex-col gap-1 text-sm font-medium text-mutedfg">
+      <a href="#services" class="rounded-lg px-3 py-2.5 hover:bg-muted hover:text-ink">Services</a>
+      <a href="#crm" class="rounded-lg px-3 py-2.5 hover:bg-muted hover:text-ink">CRM Platform</a>
+      <a href="#work" class="rounded-lg px-3 py-2.5 hover:bg-muted hover:text-ink">Work</a>
+      <a href="#process" class="rounded-lg px-3 py-2.5 hover:bg-muted hover:text-ink">Process</a>
+      <a href="#pricing" class="rounded-lg px-3 py-2.5 hover:bg-muted hover:text-ink">Pricing</a>
+      <a href="#contact" class="mt-2 inline-flex justify-center items-center gap-1.5 rounded-xl bg-accent text-onaccent px-4 py-2.5 font-semibold">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="relative overflow-hidden pt-40 pb-24 sm:pt-48 sm:pb-32">
+    <div class="absolute inset-0 bg-grid" aria-hidden="true"></div>
+    <div class="blob w-72 h-72 bg-primary/30 -top-10 -left-16" aria-hidden="true"></div>
+    <div class="blob blob-2 w-80 h-80 bg-accent/20 top-24 -right-20" aria-hidden="true"></div>
+
+    <div class="relative mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div data-reveal data-reveal-y="16" class="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-semibold text-primary shadow-soft">
+            <span class="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true"></span>
+            Web Development &amp; Custom CRM Studio
+          </div>
+
+          <h1 data-reveal data-reveal-y="22" class="mt-6 font-extrabold tracking-tight text-ink" style="font-size:clamp(2.25rem,5vw,3.5rem); line-height:1.08;">
+            We build the website — and the system that runs behind it.
+          </h1>
+
+          <p data-reveal data-reveal-y="22" class="mt-6 max-w-xl text-lg text-mutedfg leading-relaxed">
+            Nexora designs fast, conversion-ready websites and custom CRM platforms, so your team can manage leads, clients and growth from one place — instead of duct-taping five different tools together.
+          </p>
+
+          <div data-reveal data-reveal-y="22" class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#contact" class="btn inline-flex items-center gap-2 rounded-xl bg-accent text-onaccent px-6 py-3.5 font-semibold shadow-soft hover:shadow-glow">
+              Start a project
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#work" class="btn inline-flex items-center gap-2 rounded-xl border border-borderc bg-white/70 px-6 py-3.5 font-semibold text-ink hover:bg-white">
+              See our work
+            </a>
+          </div>
+
+          <dl data-reveal data-reveal-y="18" class="mt-14 grid grid-cols-3 gap-6 max-w-md">
+            <div>
+              <dt class="sr-only">Projects shipped</dt>
+              <dd class="text-3xl font-extrabold text-ink"><span class="counter" data-target="50">0</span>+</dd>
+              <p class="mt-1 text-xs font-medium text-mutedfg">Projects shipped</p>
+            </div>
+            <div>
+              <dt class="sr-only">Average client rating</dt>
+              <dd class="text-3xl font-extrabold text-ink"><span class="counter" data-target="4.9" data-decimal="1">0</span></dd>
+              <p class="mt-1 text-xs font-medium text-mutedfg">Avg. client rating</p>
+            </div>
+            <div>
+              <dt class="sr-only">Average build time in weeks</dt>
+              <dd class="text-3xl font-extrabold text-ink"><span class="counter" data-target="2">0</span>wk</dd>
+              <p class="mt-1 text-xs font-medium text-mutedfg">Avg. build turnaround</p>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Floating CRM mockup -->
+        <div class="relative" data-reveal data-reveal-y="30">
+          <div id="hero-float" class="relative mx-auto max-w-md rounded-2xl glass-dark shadow-glow p-5 text-white">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="h-2.5 w-2.5 rounded-full bg-red-400/80" aria-hidden="true"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-amber-300/80" aria-hidden="true"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-emerald-400/80" aria-hidden="true"></span>
+              </div>
+              <span class="text-[11px] font-medium text-white/50">Nexora CRM · Pipeline</span>
+            </div>
+
+            <div class="mt-5 grid grid-cols-2 gap-3">
+              <div class="rounded-xl bg-white/10 p-3.5">
+                <p class="text-[11px] text-white/50">Pipeline value</p>
+                <p class="mt-1 text-xl font-bold">$<span class="counter" data-target="128">0</span>k</p>
+              </div>
+              <div class="rounded-xl bg-white/10 p-3.5">
+                <p class="text-[11px] text-white/50">Open deals</p>
+                <p class="mt-1 text-xl font-bold"><span class="counter" data-target="34">0</span></p>
+              </div>
+            </div>
+
+            <div class="mt-3 rounded-xl bg-white/10 p-3.5">
+              <div class="flex items-center justify-between text-[11px] text-white/50">
+                <span>New leads this week</span>
+                <span class="text-emerald-300 font-semibold">+18%</span>
+              </div>
+              <div class="mt-3 flex items-end gap-1.5 h-16" aria-hidden="true">
+                <span class="flex-1 rounded-sm bg-gradient-to-t from-primary to-secondary" style="height:35%"></span>
+                <span class="flex-1 rounded-sm bg-gradient-to-t from-primary to-secondary" style="height:55%"></span>
+                <span class="flex-1 rounded-sm bg-gradient-to-t from-primary to-secondary" style="height:40%"></span>
+                <span class="flex-1 rounded-sm bg-gradient-to-t from-primary to-secondary" style="height:75%"></span>
+                <span class="flex-1 rounded-sm bg-gradient-to-t from-primary to-secondary" style="height:60%"></span>
+                <span class="flex-1 rounded-sm bg-gradient-to-t from-accent to-orange-300" style="height:92%"></span>
+              </div>
+            </div>
+
+            <ul class="mt-3 space-y-2">
+              <li class="flex items-center gap-2.5 rounded-xl bg-white/10 p-2.5 text-[13px]">
+                <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-400/20 text-emerald-300" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
+                </span>
+                Follow-up automation sent — 12 contacts
+              </li>
+              <li class="flex items-center gap-2.5 rounded-xl bg-white/10 p-2.5 text-[13px]">
+                <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/25 text-secondary" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>
+                </span>
+                Deal "Harbor Retail" moved to Proposal
+              </li>
+            </ul>
+          </div>
+
+          <div class="absolute -bottom-6 -left-6 hidden sm:block rounded-2xl glass shadow-soft p-3.5 w-44" id="hero-badge">
+            <p class="text-[11px] font-semibold text-mutedfg">Site performance</p>
+            <p class="mt-1 text-2xl font-extrabold text-primary">98<span class="text-sm align-top">/100</span></p>
+            <p class="text-[11px] text-mutedfg">Core Web Vitals</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOGO / TRUST MARQUEE ============ -->
+  <section class="border-y border-borderc bg-white py-8 overflow-hidden" aria-label="Industries we work with">
+    <p class="text-center text-xs font-semibold uppercase tracking-widest text-mutedfg mb-6">Built for teams in</p>
+    <div class="relative">
+      <div class="flex whitespace-nowrap marquee-track w-max text-mutedfg/70 font-bold text-xl tracking-tight gap-16">
+        <span>Real Estate</span><span>Professional Services</span><span>Retail &amp; E-commerce</span><span>Healthcare</span><span>Logistics</span><span>Hospitality</span><span>Education</span>
+        <span>Real Estate</span><span>Professional Services</span><span>Retail &amp; E-commerce</span><span>Healthcare</span><span>Logistics</span><span>Hospitality</span><span>Education</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section id="services" class="py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="max-w-2xl" data-reveal data-reveal-y="20">
+        <p class="text-sm font-semibold text-primary">What we do</p>
+        <h2 class="mt-2 font-extrabold text-ink tracking-tight" style="font-size:clamp(1.75rem,3.4vw,2.5rem);">Two disciplines, one connected build.</h2>
+        <p class="mt-4 text-lg text-mutedfg">Most agencies hand you a website and leave you to figure out how leads actually turn into clients. We build both halves together.</p>
+      </div>
+
+      <div class="mt-14 grid lg:grid-cols-2 gap-6">
+        <!-- Website Dev -->
+        <div data-reveal data-reveal-y="24" class="group relative rounded-2xl border border-borderc bg-card p-8 shadow-soft card-hover">
+          <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
+          </span>
+          <h3 class="mt-6 text-xl font-bold text-ink">Website Development</h3>
+          <p class="mt-3 text-mutedfg">Marketing sites, product pages and storefronts engineered for speed, clarity and conversion — not just good looks.</p>
+          <ul class="mt-6 space-y-3 text-sm text-fg">
+            <li class="flex items-start gap-2.5"><svg class="mt-0.5 shrink-0 text-primary" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Responsive, accessible design</li>
+            <li class="flex items-start gap-2.5"><svg class="mt-0.5 shrink-0 text-primary" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>SEO-ready architecture</li>
+            <li class="flex items-start gap-2.5"><svg class="mt-0.5 shrink-0 text-primary" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>A CMS your team can actually edit</li>
+          </ul>
+        </div>
+
+        <!-- CRM -->
+        <div data-reveal data-reveal-y="24" class="group relative rounded-2xl border border-borderc bg-card p-8 shadow-soft card-hover">
+          <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+          </span>
+          <h3 class="mt-6 text-xl font-bold text-ink">Custom CRM Systems</h3>
+          <p class="mt-3 text-mutedfg">Pipelines, contacts, automations and dashboards tailored to how your team actually sells and delivers.</p>
+          <ul class="mt-6 space-y-3 text-sm text-fg">
+            <li class="flex items-start gap-2.5"><svg class="mt-0.5 shrink-0 text-accent" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Lead &amp; deal pipelines</li>
+            <li class="flex items-start gap-2.5"><svg class="mt-0.5 shrink-0 text-accent" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Automated follow-ups &amp; reminders</li>
+            <li class="flex items-start gap-2.5"><svg class="mt-0.5 shrink-0 text-accent" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Team dashboards &amp; reporting</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- supporting features -->
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div data-reveal data-reveal-y="20" class="rounded-2xl border border-borderc bg-card p-6 card-hover">
+          <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-muted text-primary" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10c0-1-1-1.5-2-1.5h-3a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H9a2 2 0 0 1-2-2 4 4 0 0 1 4-4Z"/></svg>
+          </span>
+          <h4 class="mt-4 font-bold text-ink">UI/UX Design</h4>
+          <p class="mt-1.5 text-sm text-mutedfg">Interfaces shaped around how your customers actually browse and buy.</p>
+        </div>
+        <div data-reveal data-reveal-y="20" class="rounded-2xl border border-borderc bg-card p-6 card-hover">
+          <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-muted text-primary" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1.5-1.5"/></svg>
+          </span>
+          <h4 class="mt-4 font-bold text-ink">Integrations &amp; APIs</h4>
+          <p class="mt-1.5 text-sm text-mutedfg">Payments, calendars, email and the tools you already run on.</p>
+        </div>
+        <div data-reveal data-reveal-y="20" class="rounded-2xl border border-borderc bg-card p-6 card-hover">
+          <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-muted text-primary" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z"/></svg>
+          </span>
+          <h4 class="mt-4 font-bold text-ink">Automation</h4>
+          <p class="mt-1.5 text-sm text-mutedfg">Repetitive follow-ups and admin work, handled without a headcount.</p>
+        </div>
+        <div data-reveal data-reveal-y="20" class="rounded-2xl border border-borderc bg-card p-6 card-hover">
+          <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-muted text-primary" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </span>
+          <h4 class="mt-4 font-bold text-ink">Ongoing Support</h4>
+          <p class="mt-1.5 text-sm text-mutedfg">Real people on call after launch — not a ticket queue.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CRM SHOWCASE ============ -->
+  <section id="crm" class="relative py-24 sm:py-32 bg-ink overflow-hidden">
+    <div class="absolute inset-0 opacity-40 bg-grid" style="filter:invert(1);" aria-hidden="true"></div>
+    <div class="blob w-96 h-96 bg-primary/40 top-0 right-0" aria-hidden="true"></div>
+
+    <div class="relative mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="order-2 lg:order-1" data-reveal data-reveal-y="26">
+        <div class="rounded-2xl glass-dark p-6 sm:p-8 text-white shadow-glow">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-xl bg-white/10 p-4">
+              <p class="text-[11px] text-white/50">Active clients</p>
+              <p class="mt-1 text-2xl font-extrabold"><span class="counter" data-target="212">0</span></p>
+            </div>
+            <div class="rounded-xl bg-white/10 p-4">
+              <p class="text-[11px] text-white/50">Avg. response time</p>
+              <p class="mt-1 text-2xl font-extrabold"><span class="counter" data-target="4">0</span>m</p>
+            </div>
+            <div class="rounded-xl bg-white/10 p-4">
+              <p class="text-[11px] text-white/50">Automations running</p>
+              <p class="mt-1 text-2xl font-extrabold"><span class="counter" data-target="19">0</span></p>
+            </div>
+            <div class="rounded-xl bg-white/10 p-4">
+              <p class="text-[11px] text-white/50">Won this month</p>
+              <p class="mt-1 text-2xl font-extrabold">$<span class="counter" data-target="86">0</span>k</p>
+            </div>
+          </div>
+
+          <div class="mt-4 rounded-xl bg-white/10 p-4">
+            <p class="text-[11px] text-white/50 mb-3">Pipeline by stage</p>
+            <div class="space-y-2.5" aria-hidden="true">
+              <div class="flex items-center gap-3 text-[11px] text-white/60">
+                <span class="w-16">New</span>
+                <span class="flex-1 h-2 rounded-full bg-white/10 overflow-hidden"><span class="block h-full w-[80%] rounded-full bg-secondary"></span></span>
+              </div>
+              <div class="flex items-center gap-3 text-[11px] text-white/60">
+                <span class="w-16">Qualified</span>
+                <span class="flex-1 h-2 rounded-full bg-white/10 overflow-hidden"><span class="block h-full w-[60%] rounded-full bg-secondary"></span></span>
+              </div>
+              <div class="flex items-center gap-3 text-[11px] text-white/60">
+                <span class="w-16">Proposal</span>
+                <span class="flex-1 h-2 rounded-full bg-white/10 overflow-hidden"><span class="block h-full w-[38%] rounded-full bg-accent"></span></span>
+              </div>
+              <div class="flex items-center gap-3 text-[11px] text-white/60">
+                <span class="w-16">Won</span>
+                <span class="flex-1 h-2 rounded-full bg-white/10 overflow-hidden"><span class="block h-full w-[22%] rounded-full bg-emerald-400"></span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-1 lg:order-2 text-white">
+        <p data-reveal data-reveal-y="16" class="text-sm font-semibold text-secondary">The Nexora CRM Platform</p>
+        <h2 data-reveal data-reveal-y="20" class="mt-2 font-extrabold tracking-tight" style="font-size:clamp(1.75rem,3.4vw,2.5rem);">One system for your whole customer lifecycle.</h2>
+        <p data-reveal data-reveal-y="20" class="mt-4 text-lg text-white/70">From the first form submission on your new site to a closed deal and a renewal reminder a year later — it all lives in one dashboard your team will actually use.</p>
+
+        <ul class="mt-8 space-y-5">
+          <li data-reveal data-reveal-y="18" class="flex gap-4">
+            <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-secondary/20 text-secondary" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </span>
+            <div>
+              <p class="font-semibold">Leads flow straight from your website</p>
+              <p class="text-sm text-white/60 mt-0.5">Every form, chat and booking becomes a tracked contact automatically.</p>
+            </div>
+          </li>
+          <li data-reveal data-reveal-y="18" class="flex gap-4">
+            <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-secondary/20 text-secondary" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            </span>
+            <div>
+              <p class="font-semibold">Follow-ups that send themselves</p>
+              <p class="text-sm text-white/60 mt-0.5">Rule-based automations nudge cold leads before they go cold.</p>
+            </div>
+          </li>
+          <li data-reveal data-reveal-y="18" class="flex gap-4">
+            <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-secondary/20 text-secondary" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
+            </span>
+            <div>
+              <p class="font-semibold">Reporting your team actually reads</p>
+              <p class="text-sm text-white/60 mt-0.5">Clear pipeline and revenue views, not a spreadsheet export.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section id="process" class="py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="max-w-2xl" data-reveal data-reveal-y="20">
+        <p class="text-sm font-semibold text-primary">How we work</p>
+        <h2 class="mt-2 font-extrabold text-ink tracking-tight" style="font-size:clamp(1.75rem,3.4vw,2.5rem);">From kickoff to launch, no guesswork.</h2>
+      </div>
+
+      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4 relative">
+        <div class="hidden lg:block absolute top-6 left-[10%] right-[10%] h-px bg-borderc" aria-hidden="true"></div>
+
+        <div data-reveal data-reveal-y="20" class="relative">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white font-bold shadow-soft relative z-10">1</div>
+          <h3 class="mt-5 font-bold text-ink">Discover</h3>
+          <p class="mt-1.5 text-sm text-mutedfg">We map your workflow, customers and goals before touching any design.</p>
+        </div>
+        <div data-reveal data-reveal-y="20" class="relative">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white font-bold shadow-soft relative z-10">2</div>
+          <h3 class="mt-5 font-bold text-ink">Design</h3>
+          <p class="mt-1.5 text-sm text-mutedfg">Wireframes and visual design you review and refine before we build.</p>
+        </div>
+        <div data-reveal data-reveal-y="20" class="relative">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white font-bold shadow-soft relative z-10">3</div>
+          <h3 class="mt-5 font-bold text-ink">Build &amp; integrate</h3>
+          <p class="mt-1.5 text-sm text-mutedfg">The site and CRM come together, wired to your real data and tools.</p>
+        </div>
+        <div data-reveal data-reveal-y="20" class="relative">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white font-bold shadow-soft relative z-10">4</div>
+          <h3 class="mt-5 font-bold text-ink">Launch</h3>
+          <p class="mt-1.5 text-sm text-mutedfg">QA, performance and accessibility checks, then we ship it live.</p>
+        </div>
+        <div data-reveal data-reveal-y="20" class="relative">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-onaccent font-bold shadow-soft relative z-10">5</div>
+          <h3 class="mt-5 font-bold text-ink">Grow</h3>
+          <p class="mt-1.5 text-sm text-mutedfg">Ongoing support and iteration as your business changes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORK ============ -->
+  <section id="work" class="py-24 sm:py-32 bg-white border-y border-borderc">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6" data-reveal data-reveal-y="20">
+        <div class="max-w-2xl">
+          <p class="text-sm font-semibold text-primary">Selected work</p>
+          <h2 class="mt-2 font-extrabold text-ink tracking-tight" style="font-size:clamp(1.75rem,3.4vw,2.5rem);">Recent builds &amp; sample projects.</h2>
+        </div>
+        <a href="#contact" class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline">
+          Discuss your project
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="#contact" data-reveal data-reveal-y="24" class="group rounded-2xl border border-borderc overflow-hidden bg-card card-hover">
+          <div class="h-40 bg-gradient-to-br from-primary to-secondary relative flex items-center justify-center">
+            <span class="text-white/90 font-extrabold text-2xl tracking-tight">RE</span>
+            <span class="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors"></span>
+          </div>
+          <div class="p-5">
+            <p class="text-xs font-semibold text-accent">Real Estate</p>
+            <h3 class="mt-1 font-bold text-ink">Site rebuild + listings CRM</h3>
+            <p class="mt-1.5 text-sm text-mutedfg">New site plus a pipeline for buyer leads and showings.</p>
+          </div>
+        </a>
+        <a href="#contact" data-reveal data-reveal-y="24" class="group rounded-2xl border border-borderc overflow-hidden bg-card card-hover">
+          <div class="h-40 bg-gradient-to-br from-accent to-orange-300 relative flex items-center justify-center">
+            <span class="text-white/90 font-extrabold text-2xl tracking-tight">EC</span>
+            <span class="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors"></span>
+          </div>
+          <div class="p-5">
+            <p class="text-xs font-semibold text-accent">E-commerce</p>
+            <h3 class="mt-1 font-bold text-ink">Boutique storefront relaunch</h3>
+            <p class="mt-1.5 text-sm text-mutedfg">Faster checkout, cleaner catalog, +conversion focus.</p>
+          </div>
+        </a>
+        <a href="#contact" data-reveal data-reveal-y="24" class="group rounded-2xl border border-borderc overflow-hidden bg-card card-hover">
+          <div class="h-40 bg-gradient-to-br from-ink to-slate-600 relative flex items-center justify-center">
+            <span class="text-white/90 font-extrabold text-2xl tracking-tight">HC</span>
+            <span class="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors"></span>
+          </div>
+          <div class="p-5">
+            <p class="text-xs font-semibold text-accent">Healthcare</p>
+            <h3 class="mt-1 font-bold text-ink">Booking site + intake CRM</h3>
+            <p class="mt-1.5 text-sm text-mutedfg">Online booking synced straight into patient pipelines.</p>
+          </div>
+        </a>
+        <a href="#contact" data-reveal data-reveal-y="24" class="group rounded-2xl border border-borderc overflow-hidden bg-card card-hover">
+          <div class="h-40 bg-gradient-to-br from-secondary to-primary relative flex items-center justify-center">
+            <span class="text-white/90 font-extrabold text-2xl tracking-tight">LG</span>
+            <span class="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors"></span>
+          </div>
+          <div class="p-5">
+            <p class="text-xs font-semibold text-accent">Logistics</p>
+            <h3 class="mt-1 font-bold text-ink">Ops dashboard + client portal</h3>
+            <p class="mt-1.5 text-sm text-mutedfg">Custom CRM tracking shipments and account status.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="max-w-2xl mx-auto text-center" data-reveal data-reveal-y="20">
+        <p class="text-sm font-semibold text-primary">What clients say</p>
+        <h2 class="mt-2 font-extrabold text-ink tracking-tight" style="font-size:clamp(1.75rem,3.4vw,2.5rem);">Sample client feedback</h2>
+        <p class="mt-3 text-sm text-mutedfg">Placeholder quotes — swap in your own client testimonials here.</p>
+      </div>
+
+      <div class="mt-14 grid md:grid-cols-3 gap-6">
+        <figure data-reveal data-reveal-y="24" class="rounded-2xl border border-borderc bg-card p-7 shadow-soft card-hover">
+          <div class="flex gap-1 text-accent" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 6.8L12 17.3 5.7 21l1.6-6.8L2 9.6 9 9z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 6.8L12 17.3 5.7 21l1.6-6.8L2 9.6 9 9z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 6.8L12 17.3 5.7 21l1.6-6.8L2 9.6 9 9z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 6.8L12 17.3 5.7 21l1.6-6.8L2 9.6 9 9z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 6.8L12 17.3 5.7 21l1.6-6.8L2 9.6 9 9z"/></svg>
+          </div>
+          <blockquote class="mt-4 text-fg">"Our new site paid for itself in the first month, and the CRM means nothing falls through the cracks anymore."</blockquote>
+          <figcaption class="mt-5 text-sm font-semibold text-ink">Founder, boutique retail brand</figcaption>
+        </figure>
+        <figure data-reveal data-reveal-y="24" class="rounded-2xl border border-borderc bg-card p-7 shadow-soft card-hover">
+          <div class="flex gap-1 text-accent" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 6.8L12 17.3 5.7 21l1.6-6.8L2 9.6 9 9z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 6.8L12 17.3 5.7 21l1.6-6.8L2 9.6 9 9z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 6.8L12 17.3 5.7 21l1.6-6.8L2 9.6 9 9z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 6.8L12 17.3 5.7 21l1.6-6.8L2 9.6 9 9z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 6.8L12 17.3 5.7 21l1.6-6.8L2 9.6 9 9z"/></svg>
+          </div>
+          <blockquote class="mt-4 text-fg">"They actually understood our sales process before writing a line of code. The pipeline setup alone saved us hours a week."</blockquote>
+          <figcaption class="mt-5 text-sm font-semibold text-ink">Operations lead, real estate agency</figcaption>
+        </figure>
+        <figure data-reveal data-reveal-y="24" class="rounded-2xl border border-borderc bg-card p-7 shadow-soft card-hover">
+          <div class="flex gap-1 text-accent" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 6.8L12 17.3 5.7 21l1.6-6.8L2 9.6 9 9z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 6.8L12 17.3 5.7 21l1.6-6.8L2 9.6 9 9z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 6.8L12 17.3 5.7 21l1.6-6.8L2 9.6 9 9z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 6.8L12 17.3 5.7 21l1.6-6.8L2 9.6 9 9z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.6 1.6 6.8L12 17.3 5.7 21l1.6-6.8L2 9.6 9 9z"/></svg>
+          </div>
+          <blockquote class="mt-4 text-fg">"Support after launch has been the real difference — issues get fixed same day, not next sprint."</blockquote>
+          <figcaption class="mt-5 text-sm font-semibold text-ink">Clinic manager, healthcare provider</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section id="pricing" class="py-24 sm:py-32 bg-white border-y border-borderc">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="max-w-2xl mx-auto text-center" data-reveal data-reveal-y="20">
+        <p class="text-sm font-semibold text-primary">Pricing</p>
+        <h2 class="mt-2 font-extrabold text-ink tracking-tight" style="font-size:clamp(1.75rem,3.4vw,2.5rem);">Simple packages, custom quotes welcome.</h2>
+        <p class="mt-3 text-mutedfg">Starting prices below — every project gets a fixed quote after a free discovery call.</p>
+      </div>
+
+      <div class="mt-14 grid lg:grid-cols-3 gap-6 items-start">
+        <div data-reveal data-reveal-y="24" class="rounded-2xl border border-borderc bg-card p-8 card-hover">
+          <h3 class="font-bold text-ink">Website</h3>
+          <p class="mt-1 text-sm text-mutedfg">A fast, on-brand site that converts visitors.</p>
+          <p class="mt-6"><span class="text-3xl font-extrabold text-ink">$1,500</span> <span class="text-sm text-mutedfg">starting</span></p>
+          <a href="#contact" class="mt-6 btn block text-center rounded-xl border border-borderc py-3 font-semibold text-ink hover:bg-muted">Get a quote</a>
+          <ul class="mt-7 space-y-3 text-sm text-fg">
+            <li class="flex gap-2.5"><svg class="mt-0.5 shrink-0 text-primary" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Up to 6 pages</li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 shrink-0 text-primary" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Responsive + SEO setup</li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 shrink-0 text-primary" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Contact &amp; lead forms</li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 shrink-0 text-primary" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>30 days of support</li>
+          </ul>
+        </div>
+
+        <div data-reveal data-reveal-y="24" class="relative rounded-2xl border-2 border-primary bg-card p-8 shadow-glow lg:-translate-y-4">
+          <span class="absolute -top-3.5 left-8 rounded-full bg-primary text-white text-xs font-semibold px-3 py-1">Most popular</span>
+          <h3 class="font-bold text-ink">Website + CRM Bundle</h3>
+          <p class="mt-1 text-sm text-mutedfg">The full system: site, pipeline and automations.</p>
+          <p class="mt-6"><span class="text-3xl font-extrabold text-ink">$3,800</span> <span class="text-sm text-mutedfg">starting</span></p>
+          <a href="#contact" class="mt-6 btn block text-center rounded-xl bg-accent text-onaccent py-3 font-semibold shadow-soft hover:shadow-glow">Get a quote</a>
+          <ul class="mt-7 space-y-3 text-sm text-fg">
+            <li class="flex gap-2.5"><svg class="mt-0.5 shrink-0 text-primary" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Everything in Website</li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 shrink-0 text-primary" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Custom CRM pipeline setup</li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 shrink-0 text-primary" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Automated follow-up workflows</li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 shrink-0 text-primary" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>90 days of support</li>
+          </ul>
+        </div>
+
+        <div data-reveal data-reveal-y="24" class="rounded-2xl border border-borderc bg-card p-8 card-hover">
+          <h3 class="font-bold text-ink">CRM Only</h3>
+          <p class="mt-1 text-sm text-mutedfg">Bring your own site — we build the system behind it.</p>
+          <p class="mt-6"><span class="text-3xl font-extrabold text-ink">$2,500</span> <span class="text-sm text-mutedfg">starting</span></p>
+          <a href="#contact" class="mt-6 btn block text-center rounded-xl border border-borderc py-3 font-semibold text-ink hover:bg-muted">Get a quote</a>
+          <ul class="mt-7 space-y-3 text-sm text-fg">
+            <li class="flex gap-2.5"><svg class="mt-0.5 shrink-0 text-primary" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Pipeline &amp; contact system</li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 shrink-0 text-primary" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Integration with existing site</li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 shrink-0 text-primary" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>Team onboarding &amp; training</li>
+            <li class="flex gap-2.5"><svg class="mt-0.5 shrink-0 text-primary" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>60 days of support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BANNER ============ -->
+  <section class="py-20 sm:py-28">
+    <div class="mx-auto max-w-5xl px-5 sm:px-8">
+      <div data-reveal data-reveal-y="24" class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-ink px-8 py-16 sm:px-16 text-center shadow-glow">
+        <div class="blob w-64 h-64 bg-accent/30 -bottom-10 -right-10" aria-hidden="true"></div>
+        <h2 class="relative font-extrabold text-white tracking-tight" style="font-size:clamp(1.75rem,3.6vw,2.75rem);">Ready to build the site — and the system — your business deserves?</h2>
+        <p class="relative mt-4 text-white/75 max-w-xl mx-auto">Book a free 30-minute consultation. No pressure, just a clear plan for what you actually need.</p>
+        <a href="#contact" class="relative btn mt-8 inline-flex items-center gap-2 rounded-xl bg-accent text-onaccent px-7 py-3.5 font-semibold shadow-soft hover:shadow-glow">
+          Book a free consultation
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="py-24 sm:py-32 bg-white border-t border-borderc">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-2 gap-16">
+      <div data-reveal data-reveal-y="20">
+        <p class="text-sm font-semibold text-primary">Get in touch</p>
+        <h2 class="mt-2 font-extrabold text-ink tracking-tight" style="font-size:clamp(1.75rem,3.4vw,2.5rem);">Tell us about your project.</h2>
+        <p class="mt-4 text-mutedfg max-w-md">Share a few details and we'll reply within one business day with next steps and a rough estimate.</p>
+
+        <ul class="mt-10 space-y-5 text-sm">
+          <li class="flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-muted text-primary" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+            </span>
+            <a href="mailto:nexaflow.lb@gmail.com" class="font-medium text-ink hover:text-primary">nexaflow.lb@gmail.com</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-muted text-primary" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 2.9a2 2 0 0 1-.4 2.1L8 10a16 16 0 0 0 6 6l1.3-1.4a2 2 0 0 1 2.1-.4c.9.4 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>
+            </span>
+            <span class="font-medium text-ink">Response within 1 business day</span>
+          </li>
+        </ul>
+
+        <div class="mt-10 flex gap-3">
+          <a href="#" aria-label="Nexora on LinkedIn" class="flex h-10 w-10 items-center justify-center rounded-xl border border-borderc text-mutedfg hover:text-primary hover:border-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V21h-4V9Z"/></svg>
+          </a>
+          <a href="#" aria-label="Nexora on Instagram" class="flex h-10 w-10 items-center justify-center rounded-xl border border-borderc text-mutedfg hover:text-primary hover:border-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="#" aria-label="Nexora on X" class="flex h-10 w-10 items-center justify-center rounded-xl border border-borderc text-mutedfg hover:text-primary hover:border-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.6L4.5 22H1.4l8.1-9.3L1 2h7l4.9 6.1L18.9 2Zm-1.2 18h1.9L7.4 4h-2l12.3 16Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!--
+        Delivered via FormSubmit (https://formsubmit.co) — a free form-to-email relay that
+        needs no backend, account, or API key. The `action` below is the plain-POST fallback
+        (for no-JS visitors, it redirects to FormSubmit's default "message sent" page); the
+        script at the bottom of this file intercepts real submits and POSTs to FormSubmit's
+        AJAX endpoint instead, so visitors get an inline success/error message without leaving
+        the page. IMPORTANT: FormSubmit emails nexaflow.lb@gmail.com a one-time activation link
+        the first time a submission comes in — open that inbox and click it once, or messages
+        won't arrive. To point this at a different address, change it in both the `action` URL
+        below and the `endpoint` constant in the script.
+      -->
+      <form id="contact-form" data-reveal data-reveal-y="24" class="rounded-2xl border border-borderc bg-card p-7 sm:p-8 shadow-soft" action="https://formsubmit.co/nexaflow.lb@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New project inquiry — Nexora website" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <!-- Honeypot: hidden from real visitors, bots tend to fill every field they can find. -->
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" hidden aria-hidden="true" />
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="name" class="block text-sm font-semibold text-ink">Name</label>
+            <input id="name" name="name" type="text" required autocomplete="name" class="mt-2 w-full rounded-xl border border-borderc bg-white px-4 py-2.5 text-sm focus:border-primary" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-semibold text-ink">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" class="mt-2 w-full rounded-xl border border-borderc bg-white px-4 py-2.5 text-sm focus:border-primary" />
+          </div>
+        </div>
+        <div class="mt-5">
+          <label for="project" class="block text-sm font-semibold text-ink">What do you need?</label>
+          <select id="project" name="project" class="mt-2 w-full rounded-xl border border-borderc bg-white px-4 py-2.5 text-sm focus:border-primary">
+            <option>A new website</option>
+            <option>A custom CRM</option>
+            <option>Website + CRM bundle</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="mt-5">
+          <label for="message" class="block text-sm font-semibold text-ink">Project details</label>
+          <textarea id="message" name="message" rows="4" required class="mt-2 w-full rounded-xl border border-borderc bg-white px-4 py-2.5 text-sm focus:border-primary"></textarea>
+        </div>
+        <button type="submit" id="contact-submit" class="btn mt-6 w-full inline-flex items-center justify-center gap-2 rounded-xl bg-accent text-onaccent py-3.5 font-semibold shadow-soft hover:shadow-glow">
+          <span id="contact-submit-label">Send message</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+        <p id="contact-status" class="mt-3 text-xs text-mutedfg text-center" role="status" aria-live="polite">We reply within one business day.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-white/70">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <a href="#main" class="flex items-center gap-2 font-extrabold text-lg text-white">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary text-white" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z"/></svg>
+        </span>
+        Nexora
+      </a>
+      <p class="mt-4 text-sm max-w-xs">Websites and custom CRM systems for businesses that want their web presence and back office working together.</p>
+    </div>
+    <div>
+      <h3 class="text-white text-sm font-semibold">Company</h3>
+      <ul class="mt-4 space-y-3 text-sm">
+        <li><a href="#services" class="hover:text-white">Services</a></li>
+        <li><a href="#work" class="hover:text-white">Work</a></li>
+        <li><a href="#process" class="hover:text-white">Process</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-white text-sm font-semibold">Services</h3>
+      <ul class="mt-4 space-y-3 text-sm">
+        <li><a href="#services" class="hover:text-white">Website Development</a></li>
+        <li><a href="#crm" class="hover:text-white">CRM Systems</a></li>
+        <li><a href="#pricing" class="hover:text-white">Pricing</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-white text-sm font-semibold">Contact</h3>
+      <ul class="mt-4 space-y-3 text-sm">
+        <li><a href="mailto:nexaflow.lb@gmail.com" class="hover:text-white">nexaflow.lb@gmail.com</a></li>
+        <li><a href="#contact" class="hover:text-white">Start a project</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+      <p>© <span id="year"></span> Nexora. All rights reserved.</p>
+      <p>Built with care — and a working CRM behind it.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- GSAP is self-hosted under assets/js/ so the page has no external script dependency. -->
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile menu
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+  menuBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('hidden') === false;
+    menuBtn.setAttribute('aria-expanded', String(isOpen));
+    menuBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    iconOpen.classList.toggle('hidden', isOpen);
+    iconClose.classList.toggle('hidden', !isOpen);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.setAttribute('aria-label', 'Open menu');
+    iconOpen.classList.remove('hidden');
+    iconClose.classList.add('hidden');
+  }));
+
+  // Contact form — submits to FormSubmit (https://formsubmit.co) via fetch so visitors get an
+  // inline confirmation instead of leaving the page. Falls back to a normal form POST (which
+  // FormSubmit redirects to its own "message sent" page) if the request can't be sent at all.
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    const submitBtn = document.getElementById('contact-submit');
+    const submitLabel = document.getElementById('contact-submit-label');
+    const statusEl = document.getElementById('contact-status');
+    const defaultStatus = statusEl.textContent;
+    const endpoint = 'https://formsubmit.co/ajax/nexaflow.lb@gmail.com';
+    let resetTimer;
+
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (submitBtn.disabled) return;
+
+      clearTimeout(resetTimer);
+      submitBtn.disabled = true;
+      submitLabel.textContent = 'Sending…';
+      statusEl.textContent = defaultStatus;
+      statusEl.classList.remove('form-status-error');
+
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(contactForm),
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error('FormSubmit request failed');
+          contactForm.reset();
+          submitLabel.textContent = 'Message sent';
+          statusEl.textContent = "Thanks — we'll reply within one business day.";
+          resetTimer = setTimeout(() => {
+            submitLabel.textContent = 'Send message';
+            statusEl.textContent = defaultStatus;
+          }, 5000);
+        })
+        .catch(() => {
+          submitLabel.textContent = 'Send message';
+          statusEl.textContent = 'Something went wrong sending that — you can email us directly at nexaflow.lb@gmail.com instead.';
+          statusEl.classList.add('form-status-error');
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+        });
+    });
+  }
+
+  // Shrink nav on scroll
+  const navInner = document.getElementById('nav-inner');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 12) navInner.classList.add('shadow-glow');
+    else navInner.classList.remove('shadow-glow');
+  }, { passive: true });
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reduced && window.gsap) {
+    document.documentElement.classList.add('js-motion');
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero entrance
+    const heroEls = document.querySelectorAll('.pt-40 [data-reveal], .pt-48 [data-reveal]');
+    gsap.from(heroEls, {
+      opacity: 0,
+      y: (i, el) => Number(el.getAttribute('data-reveal-y')) || 20,
+      duration: 0.8,
+      ease: 'power3.out',
+      stagger: 0.1,
+    });
+
+    // Floating hero mockup
+    gsap.to('#hero-float', { y: -12, duration: 3.2, ease: 'sine.inOut', repeat: -1, yoyo: true });
+    gsap.to('#hero-badge', { y: 8, duration: 2.6, delay: 0.3, ease: 'sine.inOut', repeat: -1, yoyo: true });
+
+    // Scroll reveals for the rest of the page
+    document.querySelectorAll('section:not(:first-of-type) [data-reveal]').forEach((el) => {
+      gsap.from(el, {
+        opacity: 0,
+        y: Number(el.getAttribute('data-reveal-y')) || 20,
+        duration: 0.7,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 88%', once: true },
+      });
+    });
+
+    // Counters
+    document.querySelectorAll('.counter').forEach((el) => {
+      const target = parseFloat(el.getAttribute('data-target'));
+      const decimals = Number(el.getAttribute('data-decimal')) || 0;
+      const obj = { val: 0 };
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 90%',
+        once: true,
+        onEnter: () => {
+          gsap.to(obj, {
+            val: target,
+            duration: 1.6,
+            ease: 'power2.out',
+            onUpdate: () => { el.textContent = obj.val.toFixed(decimals); },
+          });
+        },
+      });
+    });
+  } else {
+    // Reduced motion (or no GSAP): show final numeric values immediately, no animation.
+    document.querySelectorAll('.counter').forEach((el) => {
+      const target = parseFloat(el.getAttribute('data-target'));
+      const decimals = Number(el.getAttribute('data-decimal')) || 0;
+      el.textContent = target.toFixed(decimals);
+    });
+  }
+</script>
+
+</body>
+</html>
