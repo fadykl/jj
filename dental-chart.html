@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FDI Odontogram</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #eef1f5;
+    --panel: #ffffff;
+    --panel-edge: #dde2e9;
+    --ink: #23282f;
+    --muted: #6b7280;
+    --tooth-fill: #d7dbe1;
+    --tooth-fill-hover: #c3c9d1;
+    --tooth-stroke: #454b54;
+    --line: #565c66;
+    --accent: #2f6feb;
+    --accent-soft: #e4ecff;
+    --accent-ink: #ffffff;
+    --chip-bg: #f3f5f8;
+    --focus: #2f6feb;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: #14171c;
+      --panel: #1b2027;
+      --panel-edge: #2a3038;
+      --ink: #e7eaf0;
+      --muted: #9aa3af;
+      --tooth-fill: #3a4048;
+      --tooth-fill-hover: #464d57;
+      --tooth-stroke: #b7bec8;
+      --line: #aab1bb;
+      --accent: #6a95ff;
+      --accent-soft: #223055;
+      --accent-ink: #0c1116;
+      --chip-bg: #232a33;
+      --focus: #8fb0ff;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #14171c;
+    --panel: #1b2027;
+    --panel-edge: #2a3038;
+    --ink: #e7eaf0;
+    --muted: #9aa3af;
+    --tooth-fill: #3a4048;
+    --tooth-fill-hover: #464d57;
+    --tooth-stroke: #b7bec8;
+    --line: #aab1bb;
+    --accent: #6a95ff;
+    --accent-soft: #223055;
+    --accent-ink: #0c1116;
+    --chip-bg: #232a33;
+    --focus: #8fb0ff;
+  }
+
+  *{ box-sizing: border-box; }
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Manrope", system-ui, -apple-system, sans-serif;
+    padding-block: 40px;
+  }
+  .wrap{
+    max-width: 900px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  header{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  h1{
+    margin: 0;
+    font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  header p{
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    max-width: 62ch;
+  }
+
+  .card{
+    background: var(--panel);
+    border: 1px solid var(--panel-edge);
+    border-radius: 16px;
+    padding: 20px clamp(10px, 3vw, 28px) 8px;
+  }
+
+  .arch-label{
+    display: flex;
+    justify-content: space-between;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-transform: uppercase;
+    padding: 0 6px;
+  }
+
+  svg.chart{
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .tooth{ cursor: pointer; }
+  .tooth .crown{
+    fill: var(--tooth-fill);
+    stroke: var(--tooth-stroke);
+    stroke-width: 2.5;
+    stroke-linejoin: round;
+    transition: fill 120ms ease;
+  }
+  .tooth .grooves{
+    fill: none;
+    stroke: var(--line);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    opacity: 0.85;
+  }
+  .tooth:hover .crown{ fill: var(--tooth-fill-hover); }
+  .tooth.selected .crown{ fill: var(--accent); stroke: var(--accent); }
+  .tooth.selected .grooves{ stroke: var(--accent-ink); opacity: 0.55; }
+  .num{
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-weight: 600;
+    font-size: 22px;
+    fill: var(--ink);
+    text-anchor: middle;
+    dominant-baseline: middle;
+    pointer-events: none;
+    transition: fill 120ms ease;
+  }
+  .num.selected{ fill: var(--accent-ink); }
+  .tooth:focus-visible .crown{ outline: none; stroke: var(--focus); stroke-width: 4; }
+  .tooth:focus-visible{ outline: none; }
+
+  .gap-note{
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    padding: 10px 0 2px;
+  }
+
+  .status{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 16px;
+    padding: 14px 18px;
+    background: var(--chip-bg);
+    border: 1px solid var(--panel-edge);
+    border-radius: 14px;
+  }
+  .status .count{
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+  .status .count b{ color: var(--accent); font-size: 1.05em; }
+  #selectedList{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    flex: 1 1 260px;
+    min-height: 26px;
+  }
+  #selectedList .chip{
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.8rem;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+  #selectedList .empty{
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-family: "Manrope", sans-serif;
+  }
+  button#clearBtn{
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: var(--ink);
+    background: var(--panel);
+    border: 1px solid var(--panel-edge);
+    border-radius: 999px;
+    padding: 7px 14px;
+    cursor: pointer;
+  }
+  button#clearBtn:hover{ border-color: var(--accent); color: var(--accent); }
+  button#clearBtn:focus-visible{ outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  #hoverInfo{
+    min-height: 1.2em;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  #hoverInfo b{
+    color: var(--ink);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+  }
+
+  @media (max-width: 480px){
+    .status{ flex-direction: column; align-items: stretch; }
+    .status #selectedList{ flex: 0 1 auto; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Adult Dentition — FDI Two‑Digit Notation</h1>
+    <p>Click or tap a tooth to mark it. Numbering follows the ISO/FDI system: the first digit gives the quadrant (1 upper‑right, 2 upper‑left, 3 lower‑left, 4 lower‑right), the second gives the position from the midline (1 central incisor … 8 third molar).</p>
+  </header>
+
+  <div class="card">
+    <div class="arch-label"><span>Upper right</span><span>Upper left</span></div>
+    <svg class="chart" id="chart" viewBox="0 0 800 900" role="img" aria-label="FDI dental chart, 32 selectable teeth">
+      <g id="teethLayer"></g>
+    </svg>
+    <div class="gap-note">Lower arch</div>
+  </div>
+
+  <div id="hoverInfo">&nbsp;</div>
+
+  <div class="status">
+    <span class="count">Selected <b id="selCount">0</b> / 32</span>
+    <div id="selectedList"><span class="empty">No teeth marked yet</span></div>
+    <button id="clearBtn" type="button">Clear selection</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var TYPE_PATHS = {
+    incisor: {
+      crown: 'M -20,-32 C -24,-40 -12,-44 0,-44 C 12,-44 24,-40 20,-32 L 15,10 C 13,22 8,34 0,42 C -8,34 -13,22 -15,10 Z',
+      grooves: 'M 0,36 L -9,-37 M 0,36 L 0,-42 M 0,36 L 9,-37'
+    },
+    canine: {
+      crown: 'M -17,-29 C -21,-38 -7,-43 5,-41 C 17,-39 23,-29 18,-18 L 8,28 C 5,38 1,42 -2,34 L -13,-6 Z',
+      grooves: 'M 3,-37 L 3,26 M -6,-14 L 3,-6 M 12,-16 L 3,-6'
+    },
+    premolar: {
+      crown: 'M -22,-8 C -22,-28 -9,-40 0,-40 C 9,-40 22,-28 22,-8 C 22,11 16,30 0,34 C -16,30 -22,11 -22,-8 Z',
+      grooves: 'M -11,-2 Q 0,-9 11,-2 M -9,-16 L -5,-9 M 9,-16 L 5,-9 M -7,15 L -3,8 M 7,15 L 3,8'
+    },
+    molar: {
+      crown: 'M -28,-16 C -28,-33 -14,-40 0,-40 C 14,-40 28,-33 28,-16 C 29,1 29,19 21,31 C 13,41 -13,41 -21,31 C -29,19 -28,1 -28,-16 Z',
+      grooves: 'M 0,-25 L 0,25 M -19,0 L 19,0 M -14,-18 L -8,-11 M 14,-18 L 8,-11 M -14,19 L -8,12 M 14,19 L 8,12'
+    },
+    wisdom: {
+      crown: 'M -25,-14 C -26,-30 -13,-38 -1,-37 C 11,-39 26,-31 26,-14 C 28,3 26,21 17,31 C 8,40 -11,39 -19,29 C -27,19 -24,1 -25,-14 Z',
+      grooves: 'M -2,-24 L 2,24 M -17,-1 L 17,3 M -11,-16 L -6,-9 M 12,-15 L 7,-9 M -10,17 L -5,10'
+    }
+  };
+  var LAST_DIGIT_TYPE = {1:'incisor',2:'incisor',3:'canine',4:'premolar',5:'premolar',6:'molar',7:'molar',8:'wisdom'};
+  var SCALE_BY_TYPE = {incisor:0.9, canine:0.86, premolar:0.95, molar:1.08, wisdom:1.0};
+  var QUADRANT_NAME = {1:'Upper right',2:'Upper left',3:'Lower left',4:'Lower right'};
+  var POSITION_NAME = {1:'central incisor',2:'lateral incisor',3:'canine',4:'first premolar',
+                        5:'second premolar',6:'first molar',7:'second molar',8:'third molar'};
+
+  var UPPER_ORDER = [18,17,16,15,14,13,12,11,21,22,23,24,25,26,27,28];
+  var LOWER_ORDER = [48,47,46,45,44,43,42,41,31,32,33,34,35,36,37,38];
+
+  var CX = 400, RX = 290, RY = 200;
+  var UPPER_CY = 285, LOWER_CY = 610;
+  var SPAN = 220; // degrees swept by each arch
+
+  function deg2rad(d){ return d * Math.PI / 180; }
+
+  function archPoint(theta, cy){
+    var r = deg2rad(theta);
+    return { x: CX + RX * Math.cos(r), y: cy - RY * Math.sin(r) };
+  }
+
+  function buildEntries(){
+    var entries = [];
+    UPPER_ORDER.forEach(function(fdi, i){
+      var theta = 200 - i * (SPAN / (UPPER_ORDER.length - 1));
+      var p = archPoint(theta, UPPER_CY);
+      var rot = 90 - theta;
+      entries.push(makeEntry(fdi, p.x, p.y, rot));
+    });
+    LOWER_ORDER.forEach(function(fdi, i){
+      var theta = 160 + i * (SPAN / (LOWER_ORDER.length - 1));
+      var p = archPoint(theta, LOWER_CY);
+      var rot = (theta - 270) + 180;
+      entries.push(makeEntry(fdi, p.x, p.y, rot));
+    });
+    return entries;
+  }
+
+  function makeEntry(fdi, x, y, rot){
+    var quadrant = Math.floor(fdi / 10);
+    var pos = fdi % 10;
+    var type = LAST_DIGIT_TYPE[pos];
+    var mirror = (quadrant === 2 || quadrant === 3) ? -1 : 1;
+    var scale = SCALE_BY_TYPE[type];
+    var name = QUADRANT_NAME[quadrant] + ' ' + POSITION_NAME[pos];
+    return { fdi: fdi, x: x, y: y, rot: rot, type: type, mirror: mirror, scale: scale, name: name };
+  }
+
+  var svgNS = 'http://www.w3.org/2000/svg';
+  var layer = document.getElementById('teethLayer');
+  var hoverInfo = document.getElementById('hoverInfo');
+  var selCountEl = document.getElementById('selCount');
+  var selectedListEl = document.getElementById('selectedList');
+  var selected = {};
+
+  function el(tag, attrs){
+    var e = document.createElementNS(svgNS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  buildEntries().forEach(function(t){
+    var g = el('g', {
+      class: 'tooth',
+      'data-fdi': t.fdi,
+      'data-name': t.name,
+      tabindex: '0',
+      role: 'button',
+      'aria-pressed': 'false',
+      'aria-label': 'Tooth ' + t.fdi + ', ' + t.name
+    });
+    var shape = el('g', {
+      transform: 'translate(' + t.x.toFixed(1) + ',' + t.y.toFixed(1) + ') rotate(' + t.rot.toFixed(1) + ') scale(' + (t.mirror * t.scale).toFixed(3) + ',' + t.scale.toFixed(3) + ')'
+    });
+    var paths = TYPE_PATHS[t.type];
+    shape.appendChild(el('path', { class: 'crown', d: paths.crown }));
+    shape.appendChild(el('path', { class: 'grooves', d: paths.grooves }));
+    g.appendChild(shape);
+
+    var label = el('text', {
+      class: 'num',
+      transform: 'translate(' + t.x.toFixed(1) + ',' + t.y.toFixed(1) + ')'
+    });
+    label.textContent = t.fdi;
+    layer.appendChild(g);
+    layer.appendChild(label);
+
+    function toggle(){
+      var isSel = g.classList.toggle('selected');
+      g.setAttribute('aria-pressed', isSel ? 'true' : 'false');
+      label.classList.toggle('selected', isSel);
+      if (isSel) selected[t.fdi] = t; else delete selected[t.fdi];
+      renderStatus();
+    }
+    g.addEventListener('click', toggle);
+    g.addEventListener('keydown', function(ev){
+      if (ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); toggle(); }
+    });
+    g.addEventListener('mouseenter', function(){ showInfo(t); });
+    g.addEventListener('focus', function(){ showInfo(t); });
+    g.addEventListener('mouseleave', clearInfo);
+    g.addEventListener('blur', clearInfo);
+  });
+
+  function showInfo(t){
+    hoverInfo.innerHTML = '<b>' + t.fdi + '</b> — ' + t.name.charAt(0).toUpperCase() + t.name.slice(1);
+  }
+  function clearInfo(){ hoverInfo.innerHTML = '&nbsp;'; }
+
+  function renderStatus(){
+    var keys = Object.keys(selected).map(Number).sort(function(a,b){ return a-b; });
+    selCountEl.textContent = keys.length;
+    selectedListEl.innerHTML = '';
+    if (!keys.length){
+      var empty = document.createElement('span');
+      empty.className = 'empty';
+      empty.textContent = 'No teeth marked yet';
+      selectedListEl.appendChild(empty);
+      return;
+    }
+    keys.forEach(function(fdi){
+      var chip = document.createElement('span');
+      chip.className = 'chip';
+      chip.textContent = fdi;
+      selectedListEl.appendChild(chip);
+    });
+  }
+
+  document.getElementById('clearBtn').addEventListener('click', function(){
+    document.querySelectorAll('.tooth.selected').forEach(function(g){ g.classList.remove('selected'); g.setAttribute('aria-pressed','false'); });
+    document.querySelectorAll('text.num.selected').forEach(function(t){ t.classList.remove('selected'); });
+    selected = {};
+    renderStatus();
+  });
+})();
+</script>
+</body>
+</html>
